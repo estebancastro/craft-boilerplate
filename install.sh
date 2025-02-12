@@ -156,7 +156,7 @@ ddev restart
 
 
 
-# =====================
-# Project ready message
-# =====================
-echo "Project is ready to go... 🚀"
+# ========================================
+# Launch Site and Start Development Server
+# ========================================
+sleep 2 && ddev launch && ddev npm run dev
