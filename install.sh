@@ -51,10 +51,10 @@ ddev config --project-type=craftcms --docroot=web --php-version=8.3 --database=m
 
 
 
-# ================
-# Install CraftCMS
-# ================
-echo "Installing CraftCMS... ⚡️"
+# =============
+# Install Craft
+# =============
+echo "Installing Craft... ⚡️"
 ddev composer create --no-interaction --no-scripts "craftcms/craft"
 ddev craft install
 
