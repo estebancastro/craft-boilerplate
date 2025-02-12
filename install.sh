@@ -136,16 +136,6 @@ sed -i '' 's|^ASSETS_URL=.*|ASSETS_URL="'"$(awk -F'=' '/^PRIMARY_SITE_URL/ {prin
 
 
 
-# ========================
-# Restart DDEV environment
-# ========================
-echo "Restarting DDEV... ⚡️"
-
-# Restart the DDEV environment to apply changes
-ddev restart
-
-
-
 # ======================
 # Clean up project files
 # ======================
@@ -153,6 +143,16 @@ echo "Cleaning project... ⚡️"
 
 # Remove the 'craft-boilerplate' directory and environment files
 rm -rf "craft-boilerplate" ".env.example.staging" ".env.example.production"
+
+
+
+# ========================
+# Restart DDEV environment
+# ========================
+echo "Restarting DDEV... ⚡️"
+
+# Restart the DDEV environment to apply changes
+ddev restart
 
 
 
