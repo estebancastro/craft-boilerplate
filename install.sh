@@ -86,6 +86,7 @@ cp -a "$PATCHES_DIR/ddev/." .ddev
 cp -a "$PATCHES_DIR/root/." ./
 
 
+
 # ========================
 # Set up Craft environment
 # ========================
