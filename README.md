@@ -2,10 +2,10 @@
 
 Bash
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh)
+bash <(curl -fsL https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh)
 ```
 
 Fish
 ```bash
-bash (curl -fL https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh | psub)
+bash (curl -fsL https://raw.githubusercontent.com/estebancastro/craft-boilerplate/main/install.sh | psub)
 ```
