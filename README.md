@@ -9,23 +9,23 @@ Craft CMS boilerplate using DDEV for local development and Vite for front-end bu
 - [Vite 6](https://vitejs.dev) Front end build tool with HMR.
 - [Tailwind CSS 4](https://tailwindcss.com) Utility-first CSS framework.
 
-### Extras
+#### Craft Plugins
+
+- [Minify](https://plugins.craftcms.com/minify)
+- [Vite](https://plugins.craftcms.com/vite)
+
+#### Vite Plugins
+
+- [Critical CSS](https://github.com/nystudio107/rollup-plugin-critical) Vite & Rollup plugin for generating critical CSS that uses the critical generator under the hood.
+- [Favicons](https://github.com/khalwat/vite-plugin-favicon) Leverages on favicons to automatically generate your favicons for you.
+
+#### Extras
 - [Release It!](https://github.com/release-it/release-it) Generic CLI tool to automate versioning and package publishing.
 
 ## Requirements
 
 - [Docker](https://www.docker.com)
 - [DDEV](https://ddev.com)
-
-### Craft Plugins
-
-- [Minify](https://plugins.craftcms.com/minify)
-- [Vite](https://plugins.craftcms.com/vite)
-
-### Vite Plugins
-
-- [Critical CSS](https://github.com/nystudio107/rollup-plugin-critical) Vite & Rollup plugin for generating critical CSS that uses the critical generator under the hood.
-- [Favicons](https://github.com/khalwat/vite-plugin-favicon) Leverages on favicons to automatically generate your favicons for you.
 
 ## Install
 
