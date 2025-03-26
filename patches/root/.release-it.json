@@ -1,0 +1,23 @@
+{
+    "$schema": "https://unpkg.com/release-it@18/schema/release-it.json",
+    "git": {
+        "requireCommits": true,
+        "commitMessage": "Finish ${version}",
+        "commitArgs": [
+            "-S"
+        ],
+        "tagName": "${version}",
+        "tagArgs": [
+            "-s"
+        ]
+    },
+    "github": {
+        "release": true,
+        "releaseName": "${version}",
+        "token": "$GITHUB_TOKEN"
+    },
+    "npm": {
+        "publish": false,
+        "skipChecks": true
+    }
+}

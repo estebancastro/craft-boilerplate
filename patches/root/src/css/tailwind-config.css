@@ -1,0 +1,12 @@
+/**
+ * tailwind-config.css
+ *
+ * CSS-based configuration for Tailwind CSS
+ * ref: https://tailwindcss.com/docs/theme
+ */
+
+@source "../../templates/**/*.{html,twig,vue,jsx,tsx}";
+
+@theme {
+    --font-sans: InterVariable, sans-serif;
+}

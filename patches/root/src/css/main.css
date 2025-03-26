@@ -1,0 +1,35 @@
+/**
+ * main.css
+ *
+ * The entry point for the css.
+ *
+ */
+
+/**
+ * Include custom web fonts.
+ */
+@import "./components/webfonts.css";
+
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ */
+@import "tailwindcss";
+@import "./tailwind-config.css";
+
+/**
+ * Here we add custom component classes; stuff we want loaded
+ * *before* the utilities so that the utilities can still
+ * override them.
+ */
+/* @import "./components/global.css"; */
+
+/**
+ * Include styles for individual pages
+ */
+/* @import "./pages/homepage.css"; */
+
+/**
+ * Include vendor css.
+ */
+/* @import "./vendor.css"; */
