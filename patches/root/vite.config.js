@@ -40,7 +40,7 @@ export default defineConfig(({ command, mode }) => {
         plugins: [
             liveReload(["./templates/**/*"]),
             legacy({
-                targets: ["defaults", "ie >= 11"]
+                targets: ["defaults", "not IE 11"]
             }),
             tailwindcss(),
             critical({
