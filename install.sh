@@ -66,7 +66,7 @@ ddev config --project-type=craftcms --docroot=web --php-version=8.3 --database=m
 # Install Craft
 # =============
 echo "Installing Craft ⚡️"
-ddev composer create -y "craftcms/craft"
+ddev composer create-project -y "craftcms/craft"
 ddev craft install
 
 
