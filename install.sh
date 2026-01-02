@@ -135,7 +135,6 @@ echo "Installing npm dependencies ⚡️"
 # Install required npm packages for the project
 ddev exec npm install --save-dev \
   release-it \
-  regenerator-runtime \
   rimraf \
   rollup-plugin-critical \
   tailwindcss \

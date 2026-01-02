@@ -1,10 +1,10 @@
 import { defineConfig, loadEnv } from "vite";
-import liveReload from "vite-plugin-live-reload";
 import legacy from "@vitejs/plugin-legacy";
-import tailwindcss from "@tailwindcss/vite";
+import liveReload from "vite-plugin-live-reload";
 import critical from "rollup-plugin-critical";
-import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
 import viteCompression from "vite-plugin-compression";
+import tailwindcss from "@tailwindcss/vite";
+import { ViteFaviconsPlugin } from "vite-plugin-favicon2";
 import * as path from 'path';
 
 // https://vitejs.dev/config/
@@ -21,7 +21,7 @@ export default defineConfig(({ command, mode }) => {
         build: {
             emptyOutDir: true,
             manifest: true,
-            outDir: "./web/dist/",
+            outDir: path.resolve(__dirname, 'web/dist/'),
             rollupOptions: {
                 input: {
                     app: "./src/js/app.js",
@@ -38,11 +38,16 @@ export default defineConfig(({ command, mode }) => {
             allowedHosts: [".ddev.site"],
         },
         plugins: [
-            liveReload(["./templates/**/*"]),
+            tailwindcss(),
             legacy({
                 targets: ["defaults", "not IE 11"]
             }),
-            tailwindcss(),
+            liveReload(["./templates/**/*"]),
+            ViteFaviconsPlugin({
+                logo: "./src/img/favicon-src.svg",
+                inject: false,
+                outputPath: 'favicons',
+            }),
             critical({
                 criticalUrl: primarySiteUrl,
                 criticalBase: "./web/dist/criticalcss/",
@@ -51,11 +56,6 @@ export default defineConfig(({ command, mode }) => {
                 criticalConfig: {
                     extract: true,
                 },
-            }),
-            ViteFaviconsPlugin({
-                logo: "./src/img/favicon-src.svg",
-                inject: false,
-                outputPath: 'favicons',
             }),
             viteCompression(),
         ],
