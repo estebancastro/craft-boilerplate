@@ -140,6 +140,7 @@ ddev exec npm install --save-dev \
   tailwindcss \
   @tailwindcss/vite \
   @types/node \
+  typescript \
   terser \
   vite \
   @vitejs/plugin-legacy \

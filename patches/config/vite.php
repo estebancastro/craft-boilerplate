@@ -7,7 +7,7 @@ return [
     'manifestPath' => '@webroot/dist/.vite/manifest.json',
     'devServerPublic' => rtrim(App::env('PRIMARY_SITE_URL'), '/') . ':3000',
     'serverPublic' => rtrim(App::env('PRIMARY_SITE_URL'), '/') . '/dist/',
-    'errorEntry' => 'src/js/app.js',
+    'errorEntry' => 'src/ts/app.ts',
     'cacheKeySuffix' => '',
     'devServerInternal' => '',
     'checkDevServer' => false,
