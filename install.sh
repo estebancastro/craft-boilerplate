@@ -163,16 +163,6 @@ ddev restart
 
 
 
-# ============================================
-# Set the ASSETS_URL based on PRIMARY_SITE_URL
-# ============================================
-echo "Setting assets URL ⚡️"
-
-# Replace the value of ASSETS_URL in the .env file with the value of PRIMARY_SITE_URL
-sed -i '' 's|^ASSETS_URL=.*|ASSETS_URL="'"$(awk -F'=' '/^PRIMARY_SITE_URL/ {print $2}' .env | tr -d '"')"'"|' .env
-
-
-
 # ======================
 # Clean up project files
 # ======================
