@@ -5,7 +5,7 @@
  * ref: https://tailwindcss.com/docs/theme
  */
 
-@source "../../templates/**/*.{html,twig,vue,jsx,tsx}";
+@source "../../templates/**/*.{html,twig}";
 
 @theme {
     --font-sans: InterVariable, sans-serif;
