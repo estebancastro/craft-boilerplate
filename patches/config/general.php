@@ -30,5 +30,4 @@ return GeneralConfig::create()
     ->omitScriptNameInUrls()
     ->preloadSingles()
     ->preventUserEnumeration()
-    ->useEmailAsUsername(true)
 ;
