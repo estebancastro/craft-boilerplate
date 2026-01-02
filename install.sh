@@ -133,9 +133,20 @@ ddev composer require "nystudio107/craft-minify:^5.0.0" -W && ddev craft plugin/
 echo "Installing npm dependencies ⚡️"
 
 # Install required npm packages for the project
-ddev exec npm install --save-dev vite @vitejs/plugin-legacy tailwindcss @tailwindcss/vite \
-    rimraf rollup-plugin-critical vite-plugin-compression vite-plugin-live-reload \
-    vite-plugin-favicon2 regenerator-runtime terser @types/node release-it
+ddev exec npm install --save-dev \
+  release-it \
+  regenerator-runtime \
+  rimraf \
+  rollup-plugin-critical \
+  tailwindcss \
+  @tailwindcss/vite \
+  @types/node \
+  terser \
+  vite \
+  @vitejs/plugin-legacy \
+  vite-plugin-compression \
+  vite-plugin-favicon2 \
+  vite-plugin-live-reload
 
 
 
