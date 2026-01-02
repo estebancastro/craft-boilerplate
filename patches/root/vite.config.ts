@@ -24,7 +24,7 @@ export default defineConfig(({ command, mode }) => {
             outDir: path.resolve(__dirname, 'web/dist/'),
             rollupOptions: {
                 input: {
-                    app: "./src/ts/app.ts",
+                    app: "./src/js/app.ts",
                 },
             },
         },
