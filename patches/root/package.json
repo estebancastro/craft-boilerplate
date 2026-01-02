@@ -1,9 +1,9 @@
 {
     "name": "craft",
-    "description": "Craft CMS",
-    "type": "module",
     "version": "0.0.1",
+    "description": "Craft CMS",
     "main": "vite.config.js",
+    "type": "module",
     "license": "MIT",
     "scripts": {
         "dev": "rimraf ./web/dist && node viteDevServerToggle.js 1 && vite --host",
