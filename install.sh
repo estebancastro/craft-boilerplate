@@ -1,11 +1,9 @@
 #!/bin/bash
 set -e  # Exit on any error
 
-
-
-# ======================================
+############################################
 # Check if Docker and DDEV are installed
-# ======================================
+############################################
 
 # Function to check if a command exists
 command_exists() {
@@ -30,11 +28,9 @@ if ! command_exists "ddev"; then
     exit 1
 fi
 
-
-
-# ======================================
+############################################
 # Create and enter the project directory
-# ======================================
+############################################
 while true; do
     read -rp "Enter a project name: " folder_name
 
@@ -52,36 +48,28 @@ done
 
 cd "$folder_name" || exit
 
-
-
-# ======================
+############################################
 # Configure DDEV project
-# ======================
+############################################
 echo "Configuring DDEV project ⚡️"
 ddev config --project-type=craftcms --docroot=web --php-version=8.4 --database=mysql:8.0 --disable-upload-dirs-warning
 
-
-
-# =============
+############################################
 # Install Craft
-# =============
+############################################
 echo "Installing Craft ⚡️"
 ddev composer create-project -y "craftcms/craft"
 ddev craft install
 
-
-
-# ======================================
+############################################
 # Cloning Patches from GitHub Repository
-# ======================================
+############################################
 echo "Cloning patches from GitHub ⚡️"
 git clone --depth=1 git@github.com:estebancastro/craft-boilerplate.git craft-boilerplate
 
-
-
-# ============================
+############################################
 # Apply patches to the project
-# ============================
+############################################
 echo "Applying patches ⚡️"
 
 # Set PATCHES_DIR variable to the correct location
@@ -96,11 +84,9 @@ cp -a "$PATCHES_DIR/ddev/." .ddev
 # Copy root files from the patches directory to the project root
 cp -a "$PATCHES_DIR/root/." ./
 
-
-
-# ========================
+############################################
 # Set up Craft environment
-# ========================
+############################################
 echo "Setting up Craft environment ⚡️"
 
 # Copy the example environment file to the active environment
@@ -112,24 +98,17 @@ ddev exec craft setup/app-id
 # Set up the Craft security key in the environment
 ddev exec craft setup/security-key
 
-
-
-# =====================
+############################################
 # Install Craft plugins
-# =====================
+############################################
 echo "Installing Craft plugins ⚡️"
 
-# Install the 'craft-vite' plugin and then install it using Craft
 ddev composer require "nystudio107/craft-vite:^5.0.1" -W && ddev craft plugin/install vite
-
-# Install the 'craft-minify' plugin and then install it using Craft
 ddev composer require "nystudio107/craft-minify:^5.0.0" -W && ddev craft plugin/install minify
 
-
-
-# ========================
+############################################
 # Install npm dependencies
-# ========================
+############################################
 echo "Installing npm dependencies ⚡️"
 
 # Install required npm packages for the project
@@ -151,30 +130,24 @@ ddev exec npm install --save-dev \
     vite-plugin-favicon2 \
     vite-plugin-live-reload
 
-
-
-# ========================
+############################################
 # Restart DDEV environment
-# ========================
+############################################
 echo "Restarting DDEV ⚡️"
 
 # Restart the DDEV environment to apply changes
 ddev restart
 
-
-
-# ======================
+############################################
 # Clean up project files
-# ======================
+############################################
 echo "Cleaning project ⚡️"
 
 # Remove the 'craft-boilerplate' directory and environment files
 rm -rf "craft-boilerplate" ".env.example.staging" ".env.example.production"
 
-
-
-# ================
+############################################
 # Project is ready
-# ================
+############################################
 echo "Ready for takeoff! 🚀"
 echo "Run 'make dev' to start the Vite development server."
