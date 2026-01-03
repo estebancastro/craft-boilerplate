@@ -19,14 +19,8 @@ return GeneralConfig::create()
         '@web' => rtrim(App::env('PRIMARY_SITE_URL'), '/'),
         '@webroot' => dirname(__DIR__) . '/web',
     ])
-    ->allowAdminChanges(App::env('CRAFT_ALLOW_ADMIN_CHANGES') ?? false)
-    ->cpTrigger(App::env('CRAFT_CP_TRIGGER') ?: 'admin')
-    ->devMode(App::env('CRAFT_DEV_MODE') ?? false)
-    ->disallowRobots(App::env('CRAFT_DISALLOW_ROBOTS') ?? false)
-    ->enableTemplateCaching(App::env('CRAFT_ENABLE_TEMPLATE_CACHING') ?? false)
     // Craft config settings from constants
     ->defaultWeekStartDay(1)
-    ->maxInvalidLogins(3)
     ->omitScriptNameInUrls()
     ->preloadSingles()
     ->preventUserEnumeration()
