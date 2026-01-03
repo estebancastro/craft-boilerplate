@@ -58,7 +58,7 @@ cd "$folder_name" || exit
 # Configure DDEV project
 # ======================
 echo "Configuring DDEV project ⚡️"
-ddev config --project-type=craftcms --docroot=web --database=mysql:8.0 --disable-upload-dirs-warning
+ddev config --project-type=craftcms --docroot=web --php-version=8.4 --database=mysql:8.0 --disable-upload-dirs-warning
 
 
 
