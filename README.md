@@ -4,10 +4,10 @@ Craft CMS boilerplate using DDEV for local development and Vite for front-end bu
 
 ## The Stack
 
-- [Craft CMS 5](https://craftcms.com) Content management system.
+- [Craft CMS](https://craftcms.com) Content management system.
 - [DDEV](https://ddev.com) Local development environment.
-- [Vite 7](https://vitejs.dev) Front end build tool with HMR.
-- [Tailwind CSS 4](https://tailwindcss.com) Utility-first CSS framework.
+- [Vite](https://vitejs.dev) Front end build tool with HMR.
+- [Tailwind CSS](https://tailwindcss.com) Utility-first CSS framework.
 
 #### Craft Plugins
 
