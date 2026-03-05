@@ -70,3 +70,6 @@ _ide_helper.php
 /web/dist
 config/license.key
 config/license.key.*
+
+# Ignore DDEV local environment overrides
+.ddev/.env*
