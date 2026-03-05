@@ -14,13 +14,16 @@ export default defineConfig(({ command, mode }) => {
     const env = loadEnv(mode, process.cwd(), '');
 
     // no sanity checks here. when PRIMARY_SITE_URL is missing, something is wrong.
-    const primarySiteUrl = env.PRIMARY_SITE_URL.charAt(env.PRIMARY_SITE_URL.length - 1) === "/" ? env.PRIMARY_SITE_URL.slice(0, env.PRIMARY_SITE_URL.length - 1) : env.PRIMARY_SITE_URL;
+    const primarySiteUrl = env.PRIMARY_SITE_URL.charAt(env.PRIMARY_SITE_URL.length - 1) === "/"
+        ? env.PRIMARY_SITE_URL.slice(0, env.PRIMARY_SITE_URL.length - 1)
+        : env.PRIMARY_SITE_URL;
 
     return {
         base: command === "serve" ? "" : "/dist/",
         build: {
             emptyOutDir: true,
             manifest: true,
+            sourcemap: command === "serve",
             outDir: path.resolve(__dirname, 'web/dist/'),
             rollupOptions: {
                 input: {
